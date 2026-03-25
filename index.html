@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Commerce Canal Report Processor</title>
+<title>Walmart 3P Report Processor</title>
 <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/exceljs@4.4.0/dist/exceljs.min.js"></script>
 <style>
@@ -80,7 +80,7 @@ tfoot td{padding:10px 12px;font-weight:700;font-family:'JetBrains Mono',monospac
 <div class="wrap">
   <div class="header">
     <div class="badge"><span class="badge-dot"></span>Reconciliation Tool</div>
-    <h1>Commerce Canal Report Processor</h1>
+    <h1>Walmart 3P Report Processor</h1>
     <p class="subtitle">Upload a Walmart Marketplace reconciliation report to generate a clean, formatted Excel summary.</p>
   </div>
   <div id="uploadZone" class="upload-zone" onclick="document.getElementById('fileInput').click()">
@@ -165,7 +165,7 @@ async function generateExcel(d){
   const ws=wb.addWorksheet('Fees Summary');
   ws.getColumn(1).width=50;ws.getColumn(2).width=18;
   let r=1;
-  ws.mergeCells(r,1,r,3);ws.getCell(r,1).value="Commerce Canal — Fee Summary";ws.getCell(r,1).font=F.title;r++;
+  ws.mergeCells(r,1,r,3);ws.getCell(r,1).value="Walmart 3P — Fee Summary";ws.getCell(r,1).font=F.title;r++;
   ws.mergeCells(r,1,r,3);ws.getCell(r,1).value=`Period: ${d.ps} to ${d.pe}`;ws.getCell(r,1).font=F.sub;r+=2;
   ws.getCell(r,1).value="Account-Level Fees (Not Tied to a Specific SKU)";ws.getCell(r,1).font=F.sec;r++;
   thRow(ws,r,["Fee Type","Total ($)"]);r++;
@@ -201,7 +201,7 @@ async function generateExcel(d){
   for(let j=0;j<at2.length;j++)ws2.getColumn(5+j).width=22;
   ws2.getColumn(nc).width=15;
   r=1;
-  ws2.mergeCells(r,1,r,nc);ws2.getCell(r,1).value="Commerce Canal — SKU Summary";ws2.getCell(r,1).font=F.title;r++;
+  ws2.mergeCells(r,1,r,nc);ws2.getCell(r,1).value="Walmart 3P — SKU Summary";ws2.getCell(r,1).font=F.title;r++;
   ws2.mergeCells(r,1,r,nc);ws2.getCell(r,1).value=`Period: ${d.ps} to ${d.pe}`;ws2.getCell(r,1).font=F.sub;r+=2;
   thRow(ws2,r,hd);r++;
   ws2.views=[{state:'frozen',ySplit:r-1}];
